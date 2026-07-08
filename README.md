@@ -1,22 +1,4 @@
-# commands
-1st terminal: 
-cd india-heritage
-cd backend
-npm install
-type .env
-npm run dev
-
-2nd terminal:
-cd india-heritage
-cd frontend
-npm install
-npm start
-
-
-
-
-
-# 🇮🇳 भारत — India Heritage & Culture Website
+# 🇮🇳 Bharath — India Heritage & Culture Website
 
 A full-stack web application celebrating India's rich heritage, culture, and traditions.
 
@@ -336,3 +318,18 @@ To deploy online:
 ---
 
 *Built with ❤️ to celebrate India's incredible 5,000-year civilisation*
+
+
+# commands
+1st terminal: 
+cd india-heritage
+cd backend
+npm install
+type .env
+npm run dev
+
+2nd terminal:
+cd india-heritage
+cd frontend
+npm install
+npm start

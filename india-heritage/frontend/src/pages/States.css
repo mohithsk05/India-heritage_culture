@@ -1,0 +1,285 @@
+.states-page {
+  min-height: 100vh;
+  background: var(--ivory);
+}
+
+.states-header {
+  position: relative;
+  padding: 120px 24px 80px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.states-header-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    #0D0500 0%,
+    #1a0800 40%,
+    #3d1a00 70%,
+    #2d0f00 100%
+  );
+  z-index: 0;
+}
+
+.states-header-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(255, 103, 0, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 30%, rgba(255, 215, 0, 0.1) 0%, transparent 40%);
+}
+
+.states-header-content {
+  position: relative;
+  z-index: 1;
+}
+
+.states-header .eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--saffron);
+  margin-bottom: 12px;
+}
+
+.states-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  color: var(--gold);
+  text-shadow: 0 0 40px rgba(255, 215, 0, 0.4);
+  margin-bottom: 16px;
+}
+
+.states-subtitle {
+  font-family: var(--font-heading);
+  font-style: italic;
+  color: rgba(255, 248, 231, 0.8);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.states-body {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+/* Controls */
+.states-controls {
+  margin-bottom: 24px;
+}
+
+.search-wrapper {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1rem;
+}
+
+.states-search {
+  width: 100%;
+  max-width: 500px;
+  padding: 14px 20px 14px 48px;
+  border: 2px solid var(--gold-dark);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  background: rgba(255, 248, 231, 0.9);
+  color: var(--text-primary);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.states-search:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+}
+
+.region-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.region-btn {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: 1.5px solid var(--gold-dark);
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.region-btn:hover,
+.region-btn.active {
+  background: var(--deep-maroon);
+  border-color: var(--deep-maroon);
+  color: var(--gold);
+}
+
+.states-count {
+  margin-bottom: 28px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* States Grid */
+.states-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.state-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  min-height: 260px;
+  animation: fadeInUp 0.5s ease both;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.state-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+}
+
+.state-card-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.85;
+  transition: opacity 0.3s;
+}
+
+.state-card:hover .state-card-bg {
+  opacity: 1;
+}
+
+.state-card-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    170deg,
+    rgba(0,0,0,0.1) 0%,
+    rgba(0,0,0,0.5) 100%
+  );
+}
+
+.state-card-content {
+  position: relative;
+  z-index: 1;
+  padding: 24px 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.state-emoji {
+  font-size: 2.4rem;
+  margin-bottom: 8px;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+}
+
+.state-region-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 12px;
+  color: rgba(255,255,255,0.9);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  backdrop-filter: blur(4px);
+}
+
+.state-name {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 6px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+.state-capital {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 8px;
+}
+
+.state-tagline {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.4;
+  flex: 1;
+}
+
+.state-explore-btn {
+  margin-top: 16px;
+  display: inline-block;
+  padding: 8px 18px;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: 4px;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(4px);
+  transition: all 0.2s;
+}
+
+.state-card:hover .state-explore-btn {
+  background: rgba(255,255,255,0.35);
+}
+
+.no-results {
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--text-secondary);
+}
+
+.no-results h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin: 16px 0 8px;
+  color: var(--text-primary);
+}
+
+@media (max-width: 640px) {
+  .states-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+  }
+  .state-card { min-height: 200px; }
+}

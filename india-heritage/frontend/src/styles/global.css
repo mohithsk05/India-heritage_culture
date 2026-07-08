@@ -1,0 +1,329 @@
+/* =====================================================
+   INDIA HERITAGE — GLOBAL STYLES
+   Design System: Deep Saffron × Midnight Temple × Gold
+   ===================================================== */
+
+:root {
+  --saffron: #FF6700;
+  --deep-saffron: #CC4400;
+  --gold: #FFD700;
+  --gold-muted: #C9A84C;
+  --gold-dark: #8B6914;
+  --maroon: #800000;
+  --deep-maroon: #4A0000;
+  --temple-black: #0D0500;
+  --ivory: #FFF8E7;
+  --parchment: #F5E6C8;
+  --green-india: #138808;
+  --navy-blue: #000080;
+  --text-primary: #1A0800;
+  --text-secondary: #5C3D1E;
+  --text-light: #8B6914;
+  --bg-dark: #120800;
+  --bg-card: rgba(255, 248, 231, 0.95);
+  --shadow-gold: 0 4px 20px rgba(255, 215, 0, 0.3);
+  --shadow-deep: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --border-gold: 1px solid rgba(255, 215, 0, 0.4);
+  --font-display: 'Cinzel Decorative', serif;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Lato', sans-serif;
+  --font-devanagari: 'Noto Sans Devanagari', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background: var(--ivory);
+  overflow-x: hidden;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--deep-maroon); }
+::-webkit-scrollbar-thumb { background: var(--gold-muted); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3 { font-family: var(--font-heading); }
+.display-font { font-family: var(--font-display); }
+.devanagari { font-family: var(--font-devanagari); }
+
+/* ===== UTILITY CLASSES ===== */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.gold-text {
+  color: var(--gold);
+}
+
+.saffron-text {
+  color: var(--saffron);
+}
+
+.maroon-text {
+  color: var(--maroon);
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-muted) 100%);
+  color: var(--deep-maroon);
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, #FFE44D 0%, var(--gold) 100%);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-2px);
+}
+
+.btn-saffron {
+  background: linear-gradient(135deg, var(--saffron) 0%, var(--deep-saffron) 100%);
+  color: white;
+}
+
+.btn-saffron:hover {
+  box-shadow: 0 4px 20px rgba(255, 103, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--gold);
+  border: 2px solid var(--gold);
+}
+
+.btn-outline:hover {
+  background: var(--gold);
+  color: var(--deep-maroon);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #C0392B, #922B21);
+  color: white;
+}
+
+.btn-danger:hover {
+  box-shadow: 0 4px 20px rgba(192, 57, 43, 0.4);
+  transform: translateY(-2px);
+}
+
+/* ===== CARDS ===== */
+.card {
+  background: var(--bg-card);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-deep);
+  transition: all 0.3s ease;
+  border: var(--border-gold);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3), var(--shadow-gold);
+}
+
+/* ===== ORNAMENTAL DIVIDER ===== */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-muted), transparent);
+}
+
+.divider span {
+  color: var(--gold);
+  font-size: 1.5rem;
+}
+
+/* ===== SECTION HEADERS ===== */
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header .eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--saffron);
+  margin-bottom: 12px;
+}
+
+.section-header h2 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--deep-maroon);
+  line-height: 1.2;
+}
+
+.section-header p {
+  margin-top: 16px;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== LOADING SPINNER ===== */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 20px;
+}
+
+.spinner {
+  width: 56px;
+  height: 56px;
+  border: 4px solid rgba(255, 215, 0, 0.2);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ===== FORM ELEMENTS ===== */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid var(--gold-dark);
+  border-radius: 6px;
+  background: rgba(255, 248, 231, 0.8);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+}
+
+/* ===== BADGES ===== */
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-gold {
+  background: rgba(255, 215, 0, 0.2);
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-dark);
+}
+
+.badge-saffron {
+  background: rgba(255, 103, 0, 0.15);
+  color: var(--saffron);
+  border: 1px solid var(--saffron);
+}
+
+.badge-green {
+  background: rgba(19, 136, 8, 0.15);
+  color: var(--green-india);
+  border: 1px solid var(--green-india);
+}
+
+.badge-published { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+.badge-draft { background: #fff3cd; color: #856404; border: 1px solid #ffc107; }
+
+/* ===== MANDALA BACKGROUND PATTERN ===== */
+.mandala-bg {
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(255, 103, 0, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 50% 100%, rgba(128, 0, 0, 0.1) 0%, transparent 50%);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .section { padding: 48px 0; }
+  .section-header h2 { font-size: 1.8rem; }
+  .container { padding: 0 16px; }
+}
+
+/* ===== PAGE TRANSITIONS ===== */
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s, transform 0.4s;
+}

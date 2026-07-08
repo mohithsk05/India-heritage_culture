@@ -1,0 +1,203 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 16px 0;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.navbar.scrolled {
+  background: rgba(13, 5, 0, 0.97);
+  padding: 10px 0;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.navbar:not(.scrolled) {
+  background: linear-gradient(180deg, rgba(13, 5, 0, 0.9) 0%, transparent 100%);
+}
+
+.navbar-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo-symbol {
+  font-size: 2rem;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logo-hindi {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #FFD700;
+}
+
+.logo-en {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 0.6rem;
+  font-weight: 400;
+  color: rgba(255, 215, 0, 0.7);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-link {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: rgba(255, 248, 231, 0.9);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: all 0.2s;
+  letter-spacing: 0.3px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #FFD700;
+  background: rgba(255, 215, 0, 0.1);
+}
+
+.admin-link {
+  color: #FF9F1C !important;
+}
+
+.nav-cta {
+  margin-left: 8px;
+  font-size: 0.85rem;
+  padding: 9px 20px;
+}
+
+.nav-user {
+  position: relative;
+  margin-left: 8px;
+}
+
+.user-avatar {
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, #FFD700, #CC4400);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 1rem;
+  color: #1A0800;
+  cursor: pointer;
+  border: 2px solid rgba(255, 215, 0, 0.5);
+}
+
+.user-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 12px);
+  background: #1a0a00;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 8px;
+  padding: 16px;
+  min-width: 200px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+}
+
+.nav-user:hover .user-dropdown {
+  display: block;
+}
+
+.user-name {
+  font-weight: 700;
+  color: #FFD700;
+  font-size: 0.9rem;
+}
+
+.user-email {
+  color: rgba(255, 248, 231, 0.6);
+  font-size: 0.8rem;
+  margin-top: 2px;
+}
+
+.user-dropdown hr {
+  border-color: rgba(255, 215, 0, 0.2);
+  margin: 12px 0;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  color: #FF6700;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 4px 0;
+  transition: color 0.2s;
+}
+
+.logout-btn:hover { color: #FF3300; }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #FFD700;
+  transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+  .navbar-links {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(13, 5, 0, 0.98);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+  }
+  .navbar-links.open { display: flex; }
+  .nav-link { font-size: 1.2rem; }
+}

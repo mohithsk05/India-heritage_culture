@@ -1,0 +1,14 @@
+{
+  "name": "india-heritage",
+  "version": "1.0.0",
+  "description": "India Heritage & Culture — Full Stack Web Application",
+  "scripts": {
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm start",
+    "install-all": "cd backend && npm install && cd ../frontend && npm install",
+    "start": "concurrently \"npm run backend\" \"npm run frontend\""
+  },
+  "dependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
